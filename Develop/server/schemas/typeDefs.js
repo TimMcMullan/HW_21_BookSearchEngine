@@ -6,7 +6,7 @@ type User {
     username: String!
     email: String!
     password: String!
-    savedBooks: [Book]!
+    savedBooks: [Book]
 }
 
 type Book {
@@ -31,7 +31,7 @@ type Auth {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     saveBook(bookInfo: String!): User
-    removeBook(bookInfo: String!): User
+    deleteBook(bookInfo: String!): User
   }
   `;
 
