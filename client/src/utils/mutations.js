@@ -39,9 +39,9 @@ export const SAVE_BOOK = gql`
   }
 `;
 
-export const DELETE_BOOK = gql`
-  mutation deleteBook($bookInfo: String!) {
-    deleteBook(bookInfo: $bookInfo) {
+export const REMOVE_BOOK = gql`
+  mutation removeBook($bookInfo: String!) {
+    removeBook(bookInfo: $bookInfo) {
          Book {
             bookId
             authors
@@ -49,7 +49,7 @@ export const DELETE_BOOK = gql`
             image
             title
             link 
-                }
+           }
       }
   }
   `;

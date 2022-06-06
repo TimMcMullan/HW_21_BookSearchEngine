@@ -11,7 +11,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-    },
+    }, // end of query
 
     Mutation: {
         addUser: async (parent, { username, email, password }) => {
@@ -47,8 +47,8 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-        
-        deleteBook: async (parent, { bookInfo }, context) => {
+
+        removeBook: async (parent, { bookInfo }, context) => {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
@@ -57,11 +57,14 @@ const resolvers = {
                 );
                 return updatedUser;
             }
-                throw new AuthenticationError('You need to be logged in!');
-            }
-           
-        },
-        
-};
+            throw new AuthenticationError('You need to be logged in!');
+        }
+
+    }, //end of mutation
+
+
+
+
+};// end of resolvers
 
 module.exports = resolvers;
