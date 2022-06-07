@@ -65,6 +65,9 @@ const SearchBooks = () => {
     }
 
     try {
+        // passing data to function
+      console.log(bookToSave);
+      console.log(bookToSave.bookId)
       const response = await SAVE_BOOK(bookToSave, token);
 
       if (!response.ok) {
